@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Railsware test task</title>
+    <meta name="description" content="Some Information" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="img/favicon.png" />
+
+    <!-- Font Awesome Icons-->
+    <script
+      src="https://kit.fontawesome.com/e3d9ae8c59.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Google Font Roboto -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+      integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+      crossorigin="anonymous"
+    />
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="css/styles.min.css" />
+  </head>
+
+  <body>
+    <!-- Main Section> -->
+    <section class="main-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-12">
+            <!-- LEFT BLOCK  Meeting  -->
+            <div class="meeting-block">
+              <!-- Logo -->
+              <img class="logo" src="img/logo.png" alt="Web Summit Logo" />
+              <div class="subtitle">WebSummit</div>
+              <div class="title">Local Meetup</div>
+
+              <!-- Meeting Time -->
+              <div class="meeting-time-wrapper">
+                <span class="icon"><i class="fas fa-clock"></i></span
+                ><span class="time">1 hr</span>
+              </div>
+
+              <!-- Meeting Place -->
+              <div class="meeting-place-wrapper">
+                <span class="icon location-icon"
+                  ><i class="fas fa-map-marker-alt"></i></span
+                ><span class="city">Lisbon</span>,
+                <span class="country">Portugal</span>
+              </div>
+              <!-- Listeners -->
+              <div class="listeners">Local Meetup for Entrepreneurs</div>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-12">
+            <!-- RIGHT BLOCK Date&Time Picker -->
+            <div class="date-time-picker-block">
+              <h2 class="block-title">Select Date & Time</h2>
+              <div class="row">
+                <div class="col-md-7">
+                  <!-- Date Picker Block -->
+                  <div class="date-picker-block">
+                    <!-- Calendar block header -->
+                    <div class="calendar-header">
+                      <div class="month-and-year" id="monthAndYear"></div>
+                      <!-- Months Arrow -->
+                      <div class="arrows-block">
+                        <div
+                          class="left-arrow"
+                          id="previous"
+                          onclick="previous()"
+                        >
+                          <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="right-arrow" id="next" onclick="next()">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Calendar head -->
+                    <table class="table" id="calendar">
+                      <thead>
+                        <tr class="calendar-days">
+                          <th>Sun</th>
+                          <th>Mon</th>
+                          <th>Tue</th>
+                          <th>Wed</th>
+                          <th>Thu</th>
+                          <th>Fri</th>
+                          <th>Sat</th>
+                        </tr>
+                      </thead>
+                      <!-- Calendar Body -->
+                      <tbody id="calendar-body"></tbody>
+                    </table>
+                  </div>
+                  <!-- Geolocation -->
+                  <div class="geolocation">
+                    <span class="globe-icon"><i class="fas fa-globe-americas"></i></span
+                    ><span>UK, Ireland, Lisbon Time (09:43)</span><span class="sort-down-icon"><i class="fas fa-sort-down"></i></span>
+                  </div>
+                </div>
+                <div class="col-md-5">
+                  <!-- Time Picker Block -->
+                  <div class="time-picker-block">
+                    <!-- Day and Month display -->
+                    <div class="day-and-month" id="dayAndMonth">
+                      <span
+                        class="selected-day-of-the-week"
+                        id="selectedDayOfTheWeek"
+                      ></span
+                      ><span class="selected-month" id="selectedMonth"></span>
+                      <span class="selected-day" id="selectedDay"></span>
+                    </div>
+                    <!-- Select time inputs -->
+                    <div class="select-time-wrapper">
+                      <label class="time-checkbox">
+                        <input type="radio" name="radio" />
+                        <span class="checkmark">09:00</span>
+                      </label>
+                      <label class="time-checkbox">
+                        <input type="radio" name="radio" />
+                        <span class="checkmark">09:30</span>
+                      </label>
+                      <label class="time-checkbox">
+                        <input type="radio" name="radio" />
+                        <span class="checkmark">10:00</span>
+                      </label>
+                      <label class="time-checkbox">
+                        <input type="radio" name="radio" />
+                        <span class="checkmark">10:30</span>
+                      </label>
+                      <label class="time-checkbox">
+                        <input type="radio" name="radio" />
+                        <span class="checkmark">11:00</span>
+                      </label>
+                      <label class="time-checkbox">
+                        <input type="radio" name="radio" />
+                        <span class="checkmark">11:30</span>
+                      </label>
+                      <label class="time-checkbox">
+                        <input type="radio" name="radio" />
+                        <span class="checkmark">12:00</span>
+                      </label>
+                      <label class="time-checkbox">
+                        <input type="radio" name="radio" />
+                        <span class="checkmark">12:30</span>
+                      </label>
+                      <label class="time-checkbox">
+                        <input type="radio" name="radio" />
+                        <span class="checkmark">13:00</span>
+                      </label>
+                      <label class="time-checkbox">
+                        <input type="radio" name="radio" />
+                        <span class="checkmark">13:30</span>
+                      </label>
+                      <label class="time-checkbox">
+                        <input type="radio" name="radio" />
+                        <span class="checkmark">14:00</span>
+                      </label>
+                      <label class="time-checkbox">
+                        <input type="radio" name="radio" />
+                        <span class="checkmark">14:30</span>
+                      </label>
+                      <label class="time-checkbox">
+                        <input type="radio" name="radio" />
+                        <span class="checkmark">15:00</span>
+                      </label>
+                      <label class="time-checkbox">
+                        <input type="radio" name="radio" />
+                        <span class="checkmark">15:30</span>
+                      </label>
+                      <label class="time-checkbox">
+                        <input type="radio" name="radio" />
+                        <span class="checkmark">16:00</span>
+                      </label>
+                      <label class="time-checkbox">
+                        <input type="radio" name="radio" />
+                        <span class="checkmark">16:30</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <script src="js/_custom.js"></script>
+  </body>
+</html>

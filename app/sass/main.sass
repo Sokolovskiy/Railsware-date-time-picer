@@ -1,0 +1,217 @@
+*
+	margin: 0
+	padding: 0
+
+// ------------ Variables ------------
+
+$lite-text-color: #b7b7b7
+$dark-text-color: #4a4d52
+$theme-blue: #00a2ff
+$theme-light-blue: #f2faff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.3
+	font-family: 'Roboto', sans-serif
+	overflow-x: hidden
+	color: #000
+	background-color: #fefefe
+
+// ------------ Main Section ------------
+.main-section
+	margin-top: 30px
+.meeting-block,
+.date-time-picker-block
+	height: 600px
+	width: 100%
+	padding: 25px 30px
+	background-color: #fff
+	border-radius: 10px
+	box-shadow: 0px 0px 16px -9px rgba(0,0,0,0.75)
+
+// LEFT------------ Meeting block ------------
+.meeting-block
+	
+	.logo
+		display: block
+		width: 50px
+		margin-top: 20px
+	.subtitle
+		margin-top: 40px
+		font-weight: 500	
+		color: $lite-text-color
+	.title
+		padding: 5px 0 10px
+		font-size: 30px
+		color: #4a4d52
+		font-weight: 500
+	// Meeting Icon
+	.icon
+		font-size: 20px
+	.listeners
+		margin-top: 30px
+		color: #3e3e3e
+
+// ------------ Meating Time block------------
+.meeting-time-wrapper
+	color: $lite-text-color
+	.time
+		padding-left: 4px
+	
+// ------------ Meeting Place ------------
+.meeting-place-wrapper
+	margin-top: 5px
+	color: $lite-text-color
+	.location-icon
+		padding: 0 3px 0 2px
+	.city
+		padding-left: 4px
+		
+// RIGHT------------ Date&Time Picker Block------------	
+.date-time-picker-block
+	padding: 25px 20px
+	color: $dark-text-color	
+	.block-title
+		padding-left: 12px
+		font-size: 22px
+		font-weight: 500
+
+// ------------ Calendar ------------
+
+#calendar
+
+// ------------ Calendar Header------------
+.calendar-header
+	padding-left: 12px
+	margin: 20px 0
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+.month-and-year,
+.arrows-block
+	width: 49%
+	display: inline-block
+	box-sizing: border-box
+.arrows-block
+	display: flex
+	flex-direction: row
+	justify-content: flex-end
+	.left-arrow,
+	.right-arrow
+		width: 50px
+		margin-left: 15px
+		text-align: center
+		cursor: pointer
+		transition: all .1s ease-in-out .1s
+		color: $dark-text-color
+		&:hover
+			color: $theme-blue
+			transform: scale(1.1)
+
+
+.calendar-days
+	text-transform: uppercase
+	th
+		font-size: 14px	
+		font-weight: normal
+.current-date .date-item
+	position: relative
+	background-color: $theme-light-blue
+	color: $theme-blue
+	&::after
+		content: ''
+		display: block
+		position: absolute
+		left: 50%
+		top: 80%
+		transform: translate(-50%, -50%)
+		width: 3px
+		height: 3px
+		border-radius: 50%
+		background-color: $theme-blue
+.future-date .date-item
+	background-color: $theme-light-blue
+	color: $theme-blue
+.selected-date .date-item
+	background-color: $theme-blue
+	color: #fff
+.date-item
+	width: 40px
+	height: 40px
+	margin: 0 auto
+	border-radius: 50%
+	color: $lite-text-color
+	border: 1px solid #fff
+	line-height: 2.5
+	cursor: pointer
+
+.geolocation
+	padding-left: 20px
+	font-size: 14px
+	color: $dark-text-color
+	.globe-icon
+		padding-right: 10px
+	.sort-down-icon
+		padding-left: 5px
+		vertical-align: text-bottom
+
+
+// Hide table borders
+.table thead th
+	border: none
+.table td, .table th
+	border: none
+	text-align: center
+	padding: 8px 2px
+
+// ------------ Time Picker Block ------------
+
+.day-and-month
+	padding-left: 5%
+	margin: 20px 0 30px
+.select-time-wrapper
+	height: 400px
+	overflow-y: scroll
+	overflow-x: hidden
+.time-checkbox
+	display: block	
+	width: 90%
+	margin: 10px auto
+	height: 50px
+	position: relative
+	cursor: pointer
+	color: $theme-blue
+	text-align: center
+	border-radius: 5px
+	input
+		position: absolute
+		opacity: 0
+		cursor: pointer
+	.checkmark
+		display: block
+		width: 100%
+		height: 100%
+		line-height: 3.2
+		font-weight: 500
+		border-radius: 5px
+		border: 1px solid $theme-blue
+		transition: all .1s ease-in-out .1s
+		
+
+// On mouse-over
+.time-checkbox:hover input ~ .checkmark
+  background-color: $theme-light-blue
+  transform: scale(1.05)
+// When the radio button is checked
+.time-checkbox input:checked ~ .checkmark 
+  background-color: #2196F3
+  color: #fff
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75)
+  transform: translateX(5%)
+
+
+@import 'media'
+
+
